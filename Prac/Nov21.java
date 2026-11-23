@@ -10,15 +10,11 @@ public class Nov21 {
             start++;
             end--;
         }
-        String res = "";
-        for(char ele:ch){
-          res += ele;
-        }
-        return res;
+        return new String(ch);
     }
 
     public static boolean isPalindrome(String str){
-      str = str.toLowerCase();
+      str = str.toLowerCase(Locale.ROOT);
       int start = 0,end = str.length()-1;
       while (start < end) {
         if(str.charAt(start) != str.charAt(end)){
@@ -123,7 +119,7 @@ public class Nov21 {
     }
 
     public static void longest(String str){
-       String[] arr = str.split(" ");
+       String[] arr = str.trim().split("\\s+");
        String longest = "";
        for(String ele : arr){
          if(ele.length() > longest.length()){
